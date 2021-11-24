@@ -6,6 +6,11 @@
 #include "LinkedList.h"
 #include <time.h>
 
+/** \brief crea espacio para una pelicula
+ *
+ * \return eMovie*
+ *
+ */
 eMovie* movie_new()
 {
     eMovie* movie;
@@ -15,6 +20,15 @@ eMovie* movie_new()
     return movie;
 }
 
+/** \brief se le asignan parametros a una pelicula
+ *
+ * \param idStr char*
+ * \param titulo char*
+ * \param genero char*
+ * \param char*duracionStr
+ * \return eMovie*
+ *
+ */
 eMovie* movie_newParam(char* idStr, char* titulo, char* genero, char*duracionStr)
 {
     eMovie* movie;
@@ -29,6 +43,13 @@ eMovie* movie_newParam(char* idStr, char* titulo, char* genero, char*duracionStr
     return movie;
 }
 
+/** \brief setter del id
+ *
+ * \param movie eMovie*
+ * \param id int
+ * \return int
+ *
+ */
 int movie_setId(eMovie* movie, int id)
 {
     int check=0;
@@ -40,6 +61,13 @@ int movie_setId(eMovie* movie, int id)
     return check;
 }
 
+/** \brief setter del titulo
+ *
+ * \param movie eMovie*
+ * \param titulo char*
+ * \return int
+ *
+ */
 int movie_setTitulo(eMovie* movie, char* titulo)
 {
     int check = 0;
@@ -51,6 +79,13 @@ int movie_setTitulo(eMovie* movie, char* titulo)
     return check;
 }
 
+/** \brief setter del genero
+ *
+ * \param movie eMovie*
+ * \param genero char*
+ * \return int
+ *
+ */
 int movie_setGenero(eMovie* movie, char* genero)
 {
     int check = 0;
@@ -62,6 +97,13 @@ int movie_setGenero(eMovie* movie, char* genero)
     return check;
 }
 
+/** \brief setter de duracion
+ *
+ * \param movie eMovie*
+ * \param duracion int
+ * \return int
+ *
+ */
 int movie_setDuracion(eMovie* movie, int duracion)
 {
     int check = 0;
@@ -73,6 +115,11 @@ int movie_setDuracion(eMovie* movie, int duracion)
     return check;
 }
 
+/** \brief menu principal
+ *
+ * \return int
+ *
+ */
 int menu()
 {
     int opcion;
@@ -92,6 +139,12 @@ int menu()
     return opcion;
 }
 
+/** \brief muestra una pelicula
+ *
+ * \param movie eMovie*
+ * \return void
+ *
+ */
 void mostrarMovie(eMovie* movie)
 {
     if(movie!=NULL)
@@ -100,6 +153,12 @@ void mostrarMovie(eMovie* movie)
     }
 }
 
+/** \brief muestra listado de peliculas
+ *
+ * \param lista LinkedList*
+ * \return int
+ *
+ */
 int mostrarMovies(LinkedList* lista)
 {
     int check = 0;
@@ -121,6 +180,12 @@ int mostrarMovies(LinkedList* lista)
     return check;
 }
 
+/** \brief asigna duracion de forma random
+ *
+ * \param element void*
+ * \return void*
+ *
+ */
 void* asignarTiempos(void* element)
 {
     eMovie* movie = NULL;
@@ -139,6 +204,13 @@ void* asignarTiempos(void* element)
 }
 
 
+/** \brief ordena peliculas por genero y duracion
+ *
+ * \param movie1 void*
+ * \param movie2 void*
+ * \return int
+ *
+ */
 int ordenarDuracion(void* movie1, void* movie2)
 {
     int retorno= 0;
@@ -168,3 +240,67 @@ int ordenarDuracion(void* movie1, void* movie2)
     return retorno;
 }
 
+
+/** \brief filtra por genero adventure
+ *
+ * \param element void*
+ * \return int
+ *
+ */
+int filterAdventure(void* element)
+{
+    int retorno = 0;
+    if(!strcmp(((eMovie*)element)->genero, "Adventure"))
+    {
+        retorno = 1;
+    }
+    return retorno;
+}
+
+/** \brief filtra por genero horror
+ *
+ * \param element void*
+ * \return int
+ *
+ */
+int filterHorror(void* element)
+{
+    int retorno = 0;
+    if(!strcmp(((eMovie*)element)->genero, "Horror"))
+    {
+        retorno = 1;
+    }
+    return retorno;
+}
+
+/** \brief filtra por genero drama
+ *
+ * \param element void*
+ * \return int
+ *
+ */
+int filterDrama(void* element)
+{
+    int retorno = 0;
+    if(!strcmp(((eMovie*)element)->genero, "Drama"))
+    {
+        retorno = 1;
+    }
+    return retorno;
+}
+
+/** \brief filtra por genero musical
+ *
+ * \param element void*
+ * \return int
+ *
+ */
+int filterMusical(void* element)
+{
+    int retorno = 0;
+    if(!strcmp(((eMovie*)element)->genero, "Musical"))
+    {
+        retorno = 1;
+    }
+    return retorno;
+}

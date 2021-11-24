@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1637760498 source:c:\users\lara\desktop\parcial2lab\parcial2lab\controller.c
+1637763045 source:c:\users\lara\desktop\parcial2lab\parcial2lab\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"controller.h"
@@ -21,14 +21,14 @@
 	<string.h>
 	"LinkedList.h"
 
-1637761994 source:c:\users\lara\desktop\parcial2lab\parcial2lab\main.c
+1637762816 source:c:\users\lara\desktop\parcial2lab\parcial2lab\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"controller.h"
 	"movie.h"
 
-1637761994 c:\users\lara\desktop\parcial2lab\parcial2lab\movie.h
+1637762796 c:\users\lara\desktop\parcial2lab\parcial2lab\movie.h
 	"LinkedList.h"
 
 1637756672 source:c:\users\lara\desktop\parcial2lab\parcial2lab\parser.c
@@ -38,7 +38,7 @@
 	"movie.h"
 	"LinkedList.h"
 
-1637762037 source:c:\users\lara\desktop\parcial2lab\parcial2lab\movie.c
+1637763045 source:c:\users\lara\desktop\parcial2lab\parcial2lab\movie.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>

@@ -8,8 +8,10 @@ int main()
 {
     int salir = 0;
     int flagCarga = 0;
+    int genero;
 
     LinkedList* lista = ll_newLinkedList();
+    LinkedList* filtrada;
 
     do
     {
@@ -50,19 +52,66 @@ int main()
             }
             break;
         case 4:
-            break;
+            if(flagCarga)
+            {
+                printf("    Seleccione un genero:\n\n");
+                printf("    1. Adventure\n");
+                printf("    2. Horror\n");
+                printf("    3. Drama\n");
+                printf("    4. Musical\n");
+                scanf("%d", &genero);
+                switch(genero)
+                {
+                case 1:
+                    filtrada = ll_filter(lista, filterAdventure);
+                    mostrarMovies(filtrada);
+                    break;
+                case 2:
+                    filtrada = ll_filter(lista, filterHorror);
+                    mostrarMovies(filtrada);
+                    break;
+                case 3:
+                    filtrada = ll_filter(lista, filterDrama);
+                    mostrarMovies(filtrada);
+                    break;
+                case 4:
+                    filtrada = ll_filter(lista, filterMusical);
+                    mostrarMovies(filtrada);
+                    break;
+                }
+                break;
+            }
+            else
+            {
+                printf("\n\n    Primero debe cargar el archivo\n\n");
+            }
         case 5:
-            ll_sort(lista, ordenarDuracion, 1);
-            mostrarMovies(lista);
+            if(flagCarga)
+            {
+                ll_sort(lista, ordenarDuracion, 1);
+                mostrarMovies(lista);
+            }
+            else
+            {
+                printf("\n\n    Primero debe cargar el archivo\n\n");
+            }
             break;
         case 6:
-            guardarArchivo(lista, "movies.csv");
+            if(flagCarga)
+            {
+                guardarArchivo(lista, "movies.csv");
+            }
+            else
+            {
+                printf("\n\n    Primero debe cargar el archivo\n\n");
+            }
             break;
         case 7:
             salir = 1;
             break;
         }
         system("pause");
-    }while(salir == 0);
+    }
+    while(salir == 0);
     return 0;
 }

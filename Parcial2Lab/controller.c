@@ -6,6 +6,13 @@
 #include "movie.h"
 
 
+/** \brief carga el archivo de texto
+ *
+ * \param path char*
+ * \param lista LinkedList*
+ * \return int
+ *
+ */
 int controller_loadFromText(char* path, LinkedList* lista)
 {
     int check = 0;
@@ -23,6 +30,14 @@ int controller_loadFromText(char* path, LinkedList* lista)
     }
     return check;
 }
+
+/** \brief guarda el archivo
+ *
+ * \param lista LinkedList*
+ * \param archivo char*
+ * \return void
+ *
+ */
 void guardarArchivo(LinkedList* lista, char* archivo)
 {
     FILE* f = fopen(archivo,"w");

@@ -24,4 +24,8 @@ int mostrarMovies(LinkedList* lista);
 void* asignarTiempos(void* element);
 int filtrarPorGenero(void* element);
 int ordenarDuracion(void* movie1, void* movie2);
+int filterAdventure(void* element);
+int filterHorror(void* element);
+int filterDrama(void* element);
+int filterMusical(void* element);
 
